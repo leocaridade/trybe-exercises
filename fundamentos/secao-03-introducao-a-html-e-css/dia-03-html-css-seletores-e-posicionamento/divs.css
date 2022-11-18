@@ -1,0 +1,33 @@
+div:hover {
+    border: 3px dotted black;
+}
+
+div:first-of-type {
+    background-color: red;
+    color: white;
+}
+
+div:nth-child(4) {
+    background-color: green;
+    color: blue;
+}
+
+div:nth-child(5) {
+    background-color: yellow;
+    height: 100px;
+    color: green;
+}
+
+div:nth-child(6) {
+    background-color: brown;
+    color: aliceblue;
+}
+
+div:last-of-type {
+    background-color: aquamarine;
+    color: brown;
+}
+
+div:nth-of-type(2n+1) {
+    font-style: italic;
+}
