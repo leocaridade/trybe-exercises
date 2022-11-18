@@ -23,3 +23,11 @@ h1 {
 li {
     font-size: 20px;
 }
+
+div ul li:nth-child(-n+3) {
+    color: blue;
+}
+
+div ul li:nth-child(n+2):nth-child(-n+3) {
+    background-color: pink;
+}
