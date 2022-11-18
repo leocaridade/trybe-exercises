@@ -9,3 +9,7 @@ div:first-of-type {
 div:nth-child(4) {
     background-color: green;
 }
+
+div:nth-child(5) {
+    background-color: yellow;
+}
