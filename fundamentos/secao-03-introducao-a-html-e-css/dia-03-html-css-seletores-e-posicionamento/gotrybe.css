@@ -31,3 +31,27 @@ div ul li:nth-child(-n+3) {
 div ul li:nth-child(n+2):nth-child(-n+3) {
     background-color: pink;
 }
+
+a:hover {
+    font-weight: bold;
+}
+
+li a[href*="stackoverflow"]:hover {
+    color: orange;
+}
+
+li a[href*="w3schools"]:hover {
+    color: green;
+}
+
+li a[href*="developer"]:hover {
+    color: black;
+}
+
+li a[href*="devdocs"]:hover {
+    color: yellow;
+}
+
+li a[href*="betrybe"]:hover {
+    color: green;
+}
