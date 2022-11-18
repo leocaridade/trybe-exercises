@@ -18,6 +18,10 @@ div:nth-child(6) {
     background-color: brown;
 }
 
-div:nth-child(7) {
+div:last-of-type {
     background-color: aquamarine;
+}
+
+h3:nth-child(0n+1) {
+    color: white;
 }
