@@ -1,12 +1,28 @@
 body {
     width: 700px;
     margin: auto;
+    font-size: 1.1em;
+}
+
+nav ul {
+    padding-left: 0px;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 25px;
 }
 
 aside img {
     width: 200px;
+    float: left;
 }
 
 img {
     width: 470px;
+}
+
+section p {
+    text-align: justify;
 }
