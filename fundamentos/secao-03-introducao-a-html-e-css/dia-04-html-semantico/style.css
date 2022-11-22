@@ -1,3 +1,12 @@
-img {
+body {
+    width: 700px;
+    margin: auto;
+}
+
+aside img {
     width: 200px;
+}
+
+img {
+    width: 470px;
 }
