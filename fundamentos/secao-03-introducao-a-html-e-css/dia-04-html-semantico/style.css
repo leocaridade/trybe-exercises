@@ -1,0 +1,10 @@
+div {
+    display: inline-block;
+    width: 350px;
+}
+
+aside {
+    display: inline-block;
+    float: left;
+    margin-top: 50px;
+}
