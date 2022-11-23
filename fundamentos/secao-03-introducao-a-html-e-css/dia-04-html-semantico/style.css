@@ -27,6 +27,10 @@ img {
     width: 470px;
 }
 
+div {
+    text-align: center;
+}
+
 section p {
     text-align: justify;
 }
