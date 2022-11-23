@@ -1,4 +1,4 @@
-const currentHour = 20;
+const currentHour = 17;
 let message = "";
 
 if (currentHour >= 22) {
@@ -11,6 +11,6 @@ if (currentHour >= 22) {
     message = ("Hora do almoço!!!");
 } else if (currentHour >= 4 && currentHour < 11) {
     message = ("Hmmm, cheiro de café recém-passado.");
-} else {
-    message = ("Não deveríamos comer nada")
-}
+} 
+
+console.log(message);
