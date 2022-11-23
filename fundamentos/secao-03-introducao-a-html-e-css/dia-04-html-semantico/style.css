@@ -4,6 +4,10 @@ body {
     font-size: 1.1em;
 }
 
+h1 {
+    text-align: center;
+}
+
 nav ul {
     padding-left: 0px;
 }
@@ -21,6 +25,10 @@ aside img {
 
 img {
     width: 470px;
+}
+
+div {
+    text-align: center;
 }
 
 section p {
