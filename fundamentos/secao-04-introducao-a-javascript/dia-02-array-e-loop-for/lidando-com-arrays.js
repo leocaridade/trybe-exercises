@@ -21,3 +21,8 @@ for (let index = 0; index < numbers.length; index += 1) {
 }
 media = (soma / numbers.length);
 console.log(media);
+if (media > 20) {
+    console.log('Valor maior que 20');
+} else {
+    console.log('Valor menor ou igual a 20');
+}
