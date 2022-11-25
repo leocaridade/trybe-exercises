@@ -27,12 +27,27 @@
 //     console.log('Valor menor ou igual a 20');
 // }
 
-let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
-let higherNumber = numbers[0];
+// let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+// let higherNumber = numbers[0];
 
-for (let index = 1; index < numbers.length; index += 1) {
-    if (numbers[index] > higherNumber) {
-        higherNumber = numbers[index];
+// for (let index = 1; index < numbers.length; index += 1) {
+//     if (numbers[index] > higherNumber) {
+//         higherNumber = numbers[index];
+//     }
+// }
+// console.log(higherNumber);
+
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let odd = 0;
+
+for (index = 0; index < numbers.length; index += 1) {
+    if (numbers[index] % 2 === 1) {
+        odd += 1;
     }
 }
-console.log(higherNumber);
+
+if (odd === 0) {
+    console.log('Nenhum valor ímpar encontrado!');
+} else {
+    console.log(odd);
+}
