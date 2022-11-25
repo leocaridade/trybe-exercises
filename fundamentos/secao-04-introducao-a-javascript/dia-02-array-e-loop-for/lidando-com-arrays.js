@@ -37,17 +37,27 @@
 // }
 // console.log(higherNumber);
 
-let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
-let odd = 0;
+// let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+// let odd = 0;
 
-for (index = 0; index < numbers.length; index += 1) {
-    if (numbers[index] % 2 === 1) {
-        odd += 1;
+// for (index = 0; index < numbers.length; index += 1) {
+//     if (numbers[index] % 2 === 1) {
+//         odd += 1;
+//     }
+// }
+
+// if (odd === 0) {
+//     console.log('Nenhum valor ímpar encontrado!');
+// } else {
+//     console.log(odd);
+// }
+
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let lowestNumber = numbers[0];
+
+for (index = 1; index < numbers.length; index += 1) {
+    if (numbers[index] < lowestNumber) {
+        lowestNumber = numbers[index];
     }
 }
-
-if (odd === 0) {
-    console.log('Nenhum valor ímpar encontrado!');
-} else {
-    console.log(odd);
-}
+console.log('O menor número é ' + lowestNumber);
