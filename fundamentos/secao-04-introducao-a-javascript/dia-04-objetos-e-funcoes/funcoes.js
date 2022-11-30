@@ -40,13 +40,35 @@
 // console.log(biggest(22, 22));
 
 
-function biggest(a, b, c) {
-    if (a > b && a > c) {
-        return a + ' é o maior número'
-    } else if (b > a && b > c) {
-        return b + ' é o maior número'
-    } else if (c > a && c > b) {
-        return c + ' é o maior número'
+// function biggest(a, b, c) {
+//     if (a > b && a > c) {
+//         return a + ' é o maior número'
+//     } else if (b > a && b > c) {
+//         return b + ' é o maior número'
+//     } else if (c > a && c > b) {
+//         return c + ' é o maior número'
+//     }
+// }
+// console.log(biggest(23, 22, 18));
+
+
+// function positivoNegativo (num) {
+//     if (num > 0) {
+//         return 'positive';
+//     } else if (num < 0) {
+//         return 'negative';
+//     } else {
+//         return 'zero';
+//     }
+// }
+// console.log(positivoNegativo(0));
+
+
+function triang (a, b, c) {
+    if (a + b + c === 180 && a > 0 && b > 0 && c > 0) {
+        return true;
+    } else {
+        return false;
     }
 }
-console.log(biggest(23, 22, 18));
+console.log(triang(60, 30, 90));
