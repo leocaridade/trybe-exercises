@@ -70,24 +70,42 @@
 
 
 
-//Faça uma pirâmide com n asteriscos de base que seja vazia no meio. Assuma que o valor de n será sempre ímpar:
-let n = 9;
-let symbol = '*';
-let inputLine = '';
-let midOfMatrix = (n + 1) / 2;
-let controlLeft = midOfMatrix;
-let controlRight = midOfMatrix;
+// //Faça uma pirâmide com n asteriscos de base que seja vazia no meio. Assuma que o valor de n será sempre ímpar:
+// let n = 9;
+// let symbol = '*';
+// let inputLine = '';
+// let midOfMatrix = (n + 1) / 2;
+// let controlLeft = midOfMatrix;
+// let controlRight = midOfMatrix;
 
-for (let lineIndex = 1; lineIndex <= midOfMatrix; lineIndex += 1) {
-    let outputLine = '';
-    for (let columnIndex = 1; columnIndex <= n; columnIndex += 1) {
-        if(columnIndex == controlLeft || columnIndex == controlRight || lineIndex == midOfMatrix) {
-            outputLine += symbol;
-        } else {
-            outputLine += ' ';
-        }
-    }
-    controlRight += 1;
-    controlLeft -= 1;
-    console.log(outputLine);
+// for (let lineIndex = 1; lineIndex <= midOfMatrix; lineIndex += 1) {
+//     let outputLine = '';
+//     for (let columnIndex = 1; columnIndex <= n; columnIndex += 1) {
+//         if(columnIndex == controlLeft || columnIndex == controlRight || lineIndex == midOfMatrix) {
+//             outputLine += symbol;
+//         } else {
+//             outputLine += ' ';
+//         }
+//     }
+//     controlRight += 1;
+//     controlLeft -= 1;
+//     console.log(outputLine);
+// }
+
+
+
+//Faça um programa que diz se um número definido numa variável é primo ou não.
+let divisors = 1;
+let numberToCheck = 47;
+
+for (let number = 2; number <= numberToCheck; number += 1) {
+  if (numberToCheck % number === 0) {
+    divisors += 1;
+  }
+}
+
+if (divisors === 2) {
+    console.log(numberToCheck + ' é primo');
+} else {
+    console.log(numberToCheck + ' não é primo');
 }
