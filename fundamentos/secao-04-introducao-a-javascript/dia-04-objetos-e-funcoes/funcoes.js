@@ -71,4 +71,4 @@ function triang (a, b, c) {
         return false;
     }
 }
-console.log(triang(60, 180, -60));
+console.log(triang(60, 30, 90));
