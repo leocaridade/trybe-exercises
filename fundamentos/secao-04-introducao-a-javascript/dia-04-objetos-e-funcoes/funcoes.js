@@ -52,13 +52,23 @@
 // console.log(biggest(23, 22, 18));
 
 
-function positivoNegativo (num) {
-    if (num > 0) {
-        return 'positive';
-    } else if (num < 0) {
-        return 'negative';
+// function positivoNegativo (num) {
+//     if (num > 0) {
+//         return 'positive';
+//     } else if (num < 0) {
+//         return 'negative';
+//     } else {
+//         return 'zero';
+//     }
+// }
+// console.log(positivoNegativo(0));
+
+
+function triang (a, b, c) {
+    if (a + b + c === 180 && a > 0 && b > 0 && c > 0) {
+        return true;
     } else {
-        return 'zero';
+        return false;
     }
 }
-console.log(positivoNegativo(0));
+console.log(triang(60, 180, -60));
