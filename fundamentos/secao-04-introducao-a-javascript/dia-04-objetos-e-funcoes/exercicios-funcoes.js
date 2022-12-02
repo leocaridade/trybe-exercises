@@ -62,25 +62,37 @@
 
 
 
-//exercicio 5
-function mostRepeated(array) {
-    let contRepetido = 0;
-    let contNumero = 0;
-    let indexNumeroRepetido = 0;
-    for (index = 0; index < array.length; index += 1) {
-        let verificaNumero = array[index];
-        for (secondIndex = 1; secondIndex < array.length; secondIndex += 1) {
-            if (verificaNumero === array[secondIndex]) {
-                contNumero += 1;
-            }
-        }
-        if (contNumero > contRepetido) {
-            contRepetido = contNumero;
-            indexNumeroRepetido = index;
-        }
-        contNumero = 0;
-    }
-    return array[indexNumeroRepetido];
+// //exercicio 5
+// function mostRepeated(array) {
+//     let contRepetido = 0;
+//     let contNumero = 0;
+//     let indexNumeroRepetido = 0;
+//     for (index = 0; index < array.length; index += 1) {
+//         let verificaNumero = array[index];
+//         for (secondIndex = 1; secondIndex < array.length; secondIndex += 1) {
+//             if (verificaNumero === array[secondIndex]) {
+//                 contNumero += 1;
+//             }
+//         }
+//         if (contNumero > contRepetido) {
+//             contRepetido = contNumero;
+//             indexNumeroRepetido = index;
+//         }
+//         contNumero = 0;
+//     }
+//     return array[indexNumeroRepetido];
     
+// }
+// console.log(mostRepeated([3, 3, 2, 5, 8, 2, 3]));
+
+
+
+//exercicio 6
+function sumAll (n) {
+    let result = 0;
+    for (let index = 0; index <= n; index += 1) {
+        result += index;
+    }
+    return result;
 }
-console.log(mostRepeated([3, 3, 2, 5, 8, 2, 3]));
+console.log(sumAll(10));
