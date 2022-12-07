@@ -48,12 +48,37 @@
       };
       changeText();
 
-      const changeSquareColor = () => {
+      const changeMainColor = () => {
         let main = document.getElementsByClassName('main-content')[0];
         main.style.backgroundColor = 'rgb(76,164,109)';
       };
-      changeSquareColor();
+      changeMainColor();
       
+      const changeSectionColor = () => {
+        let section = document.getElementsByClassName('center-content')[0];
+        section.style.backgroundColor = 'white';
+      };
+      changeSectionColor();
+
+      const changeHeader = () => {
+        let h1 = document.getElementsByClassName('title')[0];
+        h1.innerText = 'Desafio - JavaScript';
+      };
+      changeHeader();
+
+      const UpperCaseParagraph = () => {
+        let firstParagraph = document.getElementsByTagName('p')[0];
+        firstParagraph.innerHTML = firstParagraph.innerHTML.toUpperCase();
+      };
+      UpperCaseParagraph();
+
+      const paragraphContent = () => {
+        let allParagraph = document.getElementsByTagName('p');
+        for (index = 0; index < allParagraph.length; index += 1) {
+          console.log(allParagraph[index].innerHTML);
+        }
+      };
+      paragraphContent();
     </script>
   </body>
 </html>
