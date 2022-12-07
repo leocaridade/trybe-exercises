@@ -42,7 +42,18 @@
       </section>
     </main>
     <script>
-      document.getElementsByTagName('p')[1].innerText = 'Daqui a 2 anos estarei empregado como dev junior.';
+      function changeText () {
+          let paragraph = document.getElementsByTagName('p')[1];
+          paragraph.innerText = 'Daqui a  2 anos estarei empregado como dev junior.';
+      };
+      changeText();
+
+      const changeSquareColor = () => {
+        let main = document.getElementsByClassName('main-content')[0];
+        main.style.backgroundColor = 'rgb(76,164,109)';
+      };
+      changeSquareColor();
+      
     </script>
   </body>
 </html>
