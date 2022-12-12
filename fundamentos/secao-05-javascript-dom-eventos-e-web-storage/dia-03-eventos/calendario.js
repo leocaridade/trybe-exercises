@@ -39,3 +39,13 @@ const createDaysOfTheWeek = () => {
     divBtn.appendChild(newButton);
   };
   createButton('Feriados');
+
+  //Parte 3
+  const holidays = document.querySelectorAll('.holiday');
+  const holidayColorChange = (color) => {
+    const newButton = document.getElementById('btn-holiday');
+        newButton.addEventListener('click', (colorChange) => {
+            holidays.backgroundColor = color;
+        });
+    }
+  holidayColorChange('lightgreen');
