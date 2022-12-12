@@ -29,3 +29,13 @@ const createDaysOfTheWeek = () => {
         li.className += ' friday';
     }
   }
+
+  //Parte 2
+  const createButton = (buttonName) => {
+    const divBtn = document.querySelector('.buttons-container');
+    const newButton = document.createElement('button');
+    newButton.id = 'btn-holiday';
+    newButton.innerHTML = buttonName;
+    divBtn.appendChild(newButton);
+  };
+  createButton('Feriados');
