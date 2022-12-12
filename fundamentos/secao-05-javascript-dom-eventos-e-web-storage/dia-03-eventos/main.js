@@ -25,12 +25,29 @@ thirdLi.addEventListener('click', handleChangeTech);
 // - Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 // com a classe 'tech';
 
+input.addEventListener('input', (event) => {
+  const techElement = document.querySelector('.tech');
+  techElement.innerText = event.target.value;
+});
+
 // - Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 // redirecione para alguma página;
 //  - Que tal redirecionar para seu portfólio?
 
+myWebpage.addEventListener('dblclick', () => {
+  window.location.replace('https://www.google.com');
+});
+
 // - Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
+
+myWebpage.addEventListener('mouseover', (event) => {
+  event.target.style.color = 'green';
+});
+
+myWebpage.addEventListener('mouseout', (event) => {
+  event.target.style.color = 'unset';
+});
 
 // Segue abaixo um exemplo do uso de event.target:
 
