@@ -29,7 +29,7 @@ const createDaysOfTheWeek = () => {
         li.className += ' friday';
     }
   }
-
+  
   //Parte 2
   const createButton = (buttonName) => {
     const divBtn = document.querySelector('.buttons-container');
@@ -41,11 +41,68 @@ const createDaysOfTheWeek = () => {
   createButton('Feriados');
 
   //Parte 3
-  const holidays = document.querySelectorAll('.holiday');
-  const holidayColorChange = (color) => {
-    const newButton = document.getElementById('btn-holiday');
-        newButton.addEventListener('click', (colorChange) => {
-            holidays.backgroundColor = color;
+  const holidaysColorChange = () => {
+    const holidays = document.getElementsByClassName('holiday');
+    const holidayBtn = document.getElementById('btn-holiday');
+    const backgroundColor = 'rgb(238,238,238)';
+    const setNewColor = 'white';
+
+    holidayBtn.addEventListener('click', () => {
+      for (index = 0; index < holidays.length; index += 1) {
+        if (holidays[index].style.backgroundColor === setNewColor) {
+          holidays[index].style.backgroundColor = backgroundColor;
+        } else {
+          holidays[index].style.backgroundColor = setNewColor;
+        }
+      }
+    });
+  }
+    holidaysColorChange();
+
+    //Parte 4
+    const fridayBtn = (day) => {
+      const fridayButton = document.createElement('button');
+      fridayButton.id = 'btn-friday';
+      fridayButton.innerHTML = day;
+      const buttonsContainer = document.querySelector('.buttons-container');
+      buttonsContainer.appendChild(fridayButton);
+    };
+    fridayBtn('Sexta-feira');
+
+    //Parte 5
+    const changeFridayText = (fridaysArray) => {
+      const fridays = document.getElementsByClassName('friday');
+      const fridayBtn = document.getElementById('btn-friday');
+      const fridayText = 'Friday';
+      
+      fridayBtn.addEventListener('click', () => {
+        for (index = 0; index < fridays.length; index += 1) {
+        if (fridays[index].innerHTML !== fridayText) {
+          fridays[index].innerHTML = fridayText;
+        } else {
+          fridays[index].innerHTML = fridaysArray[index];
+        }
+      }
+      });
+    }
+    let decemberFridays = [4, 11, 18, 25];
+    changeFridayText(decemberFridays);
+
+    //Parte 6
+    const zoomOver = () => {
+      const days = document.getElementById('days');
+        days.addEventListener('mouseover', (event) => {
+          event.target.style.fontSize = '30px';
+          event.target.style.fontWeigth = '600';
         });
     }
-  holidayColorChange('lightgreen');
+
+    const zoomOut = () => {
+      const days = document.getElementById('days');
+      days.addEventListener('mouseout', (event) => {
+        event.target.style.fontSize = '20px';
+        event.target.style.fontWeigth = '200';
+      });
+    }
+    zoomOver();
+    zoomOut();
