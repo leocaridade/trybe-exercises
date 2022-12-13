@@ -41,7 +41,6 @@ const createDaysOfTheWeek = () => {
   createButton('Feriados');
 
   //Parte 3
-  
   const holidaysColorChange = () => {
     const holidays = document.getElementsByClassName('holiday');
     const holidayBtn = document.getElementById('btn-holiday');
@@ -59,3 +58,13 @@ const createDaysOfTheWeek = () => {
     });
   }
     holidaysColorChange();
+
+    //Parte 4
+    const fridayBtn = (day) => {
+      const fridayButton = document.createElement('button');
+      fridayButton.id = 'btn-friday';
+      fridayButton.innerHTML = day;
+      const buttonsContainer = document.querySelector('.buttons-container');
+      buttonsContainer.appendChild(fridayButton);
+    };
+    fridayBtn('Sexta-feira');
