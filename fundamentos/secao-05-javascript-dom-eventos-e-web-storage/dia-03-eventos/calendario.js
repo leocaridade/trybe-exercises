@@ -68,3 +68,22 @@ const createDaysOfTheWeek = () => {
       buttonsContainer.appendChild(fridayButton);
     };
     fridayBtn('Sexta-feira');
+
+    //Parte 5
+    const changeFridayText = (fridaysArray) => {
+      const fridays = document.getElementsByClassName('friday');
+      const fridayBtn = document.getElementById('btn-friday');
+      const fridayText = 'Friday';
+      
+      fridayBtn.addEventListener('click', () => {
+        for (index = 0; index < fridays.length; index += 1) {
+        if (fridays[index].innerHTML !== fridayText) {
+          fridays[index].innerHTML = fridayText;
+        } else {
+          fridays[index].innerHTML = fridaysArray[index];
+        }
+      }
+      });
+    }
+    let decemberFridays = [4, 11, 18, 25];
+    changeFridayText(decemberFridays);
