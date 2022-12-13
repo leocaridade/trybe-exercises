@@ -29,7 +29,7 @@ const createDaysOfTheWeek = () => {
         li.className += ' friday';
     }
   }
-
+  
   //Parte 2
   const createButton = (buttonName) => {
     const divBtn = document.querySelector('.buttons-container');
@@ -41,11 +41,21 @@ const createDaysOfTheWeek = () => {
   createButton('Feriados');
 
   //Parte 3
-  const holidays = document.querySelectorAll('.holiday');
-  const holidayColorChange = (color) => {
-    const newButton = document.getElementById('btn-holiday');
-        newButton.addEventListener('click', (colorChange) => {
-            holidays.backgroundColor = color;
-        });
-    }
-  holidayColorChange('lightgreen');
+  
+  const holidaysColorChange = () => {
+    const holidays = document.getElementsByClassName('holiday');
+    const holidayBtn = document.getElementById('btn-holiday');
+    const backgroundColor = 'rgb(238,238,238)';
+    const setNewColor = 'white';
+
+    holidayBtn.addEventListener('click', () => {
+      for (index = 0; index < holidays.length; index += 1) {
+        if (holidays[index].style.backgroundColor === setNewColor) {
+          holidays[index].style.backgroundColor = backgroundColor;
+        } else {
+          holidays[index].style.backgroundColor = setNewColor;
+        }
+      }
+    });
+  }
+    holidaysColorChange();
