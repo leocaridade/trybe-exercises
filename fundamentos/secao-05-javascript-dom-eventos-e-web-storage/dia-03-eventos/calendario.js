@@ -139,3 +139,24 @@ const createDaysOfTheWeek = () => {
       });
     }
     selectTask();
+
+    //Parte 10
+    const setDayColor = () => {
+      let selectedTask = document.getElementsByClassName('task selected'); // Retorna um array com todos os elementos com a classe "task selected"
+      let days = document.querySelector('#days'); // Seleciona a primeira ul com id "days"
+      let taskDiv = document.querySelector('.task'); // Seleciona o primeiro elemento com a classe "task"
+      let taskColor = taskDiv.style.backgroundColor; // Salva o Background Color da classe task na variável "taskColor"
+
+      days.addEventListener('click', (event) => { // Para pegar o evento alvo, precisamos declarar o evento como parâmetro da função
+        let eventTargetColor = event.target.style.color;
+        if (selectedTask.length > 0 && eventTargetColor !== taskColor) {
+          // Caso não houver nenhum elemento com a classe "task selected" E o evento alvo não tiver a mesma cor de fundo da variável "taskColor"
+          let color = selectedTask[0].style.backgroundColor;
+          event.target.style.color = color;
+        } else if (eventTargetColor === taskColor) {
+          // Caso a cor do evento alvo seja igual à da variável "taskColor"
+          event.target.style.color = 'rgb(119,119,119)';
+        }
+      });
+    }
+    setDayColor();
