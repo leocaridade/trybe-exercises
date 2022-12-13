@@ -106,3 +106,12 @@ const createDaysOfTheWeek = () => {
     }
     zoomOver();
     zoomOut();
+
+    //Parte 7
+    const addTask = (task) => {
+      let tarefa = document.createElement('span');
+      let taskDiv = document.querySelector('.my-tasks');
+      tarefa.innerHTML = task;
+      taskDiv.appendChild(tarefa);
+    }
+    addTask('Estudar');
