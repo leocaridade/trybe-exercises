@@ -87,3 +87,22 @@ const createDaysOfTheWeek = () => {
     }
     let decemberFridays = [4, 11, 18, 25];
     changeFridayText(decemberFridays);
+
+    //Parte 6
+    const zoomOver = () => {
+      const days = document.getElementById('days');
+        days.addEventListener('mouseover', (event) => {
+          event.target.style.fontSize = '30px';
+          event.target.style.fontWeigth = '600';
+        });
+    }
+
+    const zoomOut = () => {
+      const days = document.getElementById('days');
+      days.addEventListener('mouseout', (event) => {
+        event.target.style.fontSize = '20px';
+        event.target.style.fontWeigth = '200';
+      });
+    }
+    zoomOver();
+    zoomOut();
