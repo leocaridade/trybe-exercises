@@ -115,3 +115,27 @@ const createDaysOfTheWeek = () => {
       taskDiv.appendChild(tarefa);
     }
     addTask('Estudar');
+
+    //Parte 8
+    const addSubtitle = (color) => {
+      let newDiv = document.createElement('div');
+      let taskDiv = document.querySelector('.my-tasks');
+      newDiv.className = 'task';
+      newDiv.style.backgroundColor = color;
+      taskDiv.appendChild(newDiv);
+    }
+    addSubtitle('green');
+
+    //Parte 9
+    const selectTask = () => {
+      let selectedTask = document.getElementsByClassName('task selected');
+      let taskDiv = document.querySelector('.task');
+      taskDiv.addEventListener('click', (event) => {
+        if (selectedTask.length === 0) {
+          event.target.className = 'task selected';
+        } else {
+          event.target.className = 'task';
+        }
+      });
+    }
+    selectTask();
