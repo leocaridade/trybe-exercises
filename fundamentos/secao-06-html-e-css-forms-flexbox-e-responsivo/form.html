@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrybeTrip</title>
+</head>
+<body>
+    <h1>TrybeTrip</h1>
+    <form action="" id="formulario">
+        <label for="input-name">Nome:
+            <input type="text" name="nome" id="input-name">
+        </label>
+        <br>
+        <br>
+        <label for="input-email">Email:
+            <input type="email" name="e-mail" id="input-email">
+        </label>
+        <br>
+        <p>Destino preferido:</p>
+        <label for="destino1">
+            <input type="radio" name="input-destino" id="destino1" value="cidade">Cidade
+        </label>
+        <label for="destino2">
+            <input type="radio" name="input-destino" id="destino2" value="campo">Campo</label>
+        <label for="destino3">
+            <input type="radio" name="input-destino" id="destino3" value="praia">Praia</label>
+        <label for="destino4">
+            <input type="radio" name="input-destino" id="destino4" value="montanha">Montanha
+        </label>
+        <p>Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</p>
+        <textarea name="resposta" id="resposta" cols="50" rows="10"></textarea>
+        <br>
+        <label for="data">Qual a melhor data para realizar a viagem?
+            <input type="date" name="data" id="data">
+        </label>
+        <br>
+        <label for="input-checkbox1">Gostaria de receber outras incríveis oportunidades recebidas pela Trybe?
+            <input type="checkbox" name="" id="input-checkbox1">
+        </label>
+        <br>
+        <label for="input-checkbox2">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
+            <input type="checkbox" name="" id="input-checkbox2">
+        </label>
+    </form>
+    <button type="submit" form="formulario">Enviar</button>
+</body>
+</html>
