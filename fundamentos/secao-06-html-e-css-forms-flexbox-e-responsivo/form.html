@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrybeTrip</title>
+</head>
+<body>
+    <h1>TrybeTrip</h1>
+    <form action="" id="formulario">
+        <fieldset>
+        <label for="input-name">Nome:</label>
+            <input type="text" name="nome" id="input-name" minlength="10" maxlength="40">
+        <br>
+        <br>
+        <label for="input-email">Email:</label>
+            <input type="email" name="e-mail" id="input-email" minlength="10" maxlength="50">
+        <br>
+        <p>Destino preferido:</p>
+        <label for="destino1">Cidade</label>
+            <input type="radio" name="input-destino" id="destino1" value="cidade">
+        <label for="destino2">Campo</label>
+            <input type="radio" name="input-destino" id="destino2" value="campo">
+        <label for="destino3">Praia</label>
+            <input type="radio" name="input-destino" id="destino3" value="praia">
+        <label for="destino4">Montanha</label>
+            <input type="radio" name="input-destino" id="destino4" value="montanha">
+        <p>Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</p>
+        <textarea name="resposta" id="resposta" cols="50" rows="10"></textarea>
+        <br>
+        <label for="data">Qual a melhor data para realizar a viagem?</label>
+            <input type="date" name="data" id="data">
+        <br>
+        <label for="input-checkbox1">Gostaria de receber outras incríveis oportunidades recebidas pela Trybe?</label>
+            <input type="checkbox" name="check1" id="input-checkbox1">
+        <br>
+        <label for="input-checkbox2">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
+            <input type="checkbox" name="check2" id="input-checkbox2" required>
+    </fieldset>
+    <button type="submit" id="button-submit">Enviar</button>
+    <button type="reset">Limpar</button>
+    <script src="script2.js"></script>
+    </form>
+    
+</body>
+</html>
