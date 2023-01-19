@@ -40,8 +40,6 @@ const numberOfStudents = (object) => {
   return total;
 };
 
-console.log(numberOfStudents(allLessons));
-
 const getValueByNumber = (obj, position) => {
   const valuesList = Object.values(obj);
   return valuesList[position];
@@ -54,3 +52,36 @@ const verifyPair = (object, key, value) => {
     return false;
   }
 };
+
+const mathStudents = (object) => {
+  let total = 0;
+  const keys = Object.keys(object);
+  for (index = 0; index < keys.length; index += 1) {
+    if (object[keys[index]].materia === 'Matemática') {
+      total += object[keys[index]].numeroEstudantes;
+    }
+  }
+  return total;
+};
+
+const getInfo = (object, professor) => {
+  const keys = Object.keys(object);
+  let students = 0;
+  let aulas = [];
+  for (index = 0; index < keys.length; index += 1) {
+    if (object[keys[index]].professor === professor) {
+      students += object[keys[index]].numeroEstudantes;
+      aulas.push(object[keys[index]].materia);
+    }
+  }
+  return {aulas: aulas, estudantes: students};
+};
+
+const createReport = (allLessons, professor) => {
+  const report = {};
+  report.professor = professor;
+  Object.assign(report, getInfo(allLessons, professor));
+  return report;
+};
+
+console.log(createReport(allLessons, 'Carlos'));
