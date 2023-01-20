@@ -37,9 +37,37 @@ describe('testa a função myFizzBuzz', () => {
 });
 
 describe('testa a função encode', () => {
+    test('testa se encode é uma função', () => {
+        expect(typeof(encode)).toBe('function');
+    });
 
+    test('Espera que "a, e, i, o, u" retorne "1, 2, 3, 4, 5"', () => {
+        expect(encode('a, e, i, o, u')).toBe('1, 2, 3, 4, 5');
+    });
+
+    test('Espera que "maluco" retorne "m1l5c4"', () => {
+        expect(encode('maluco')).toEqual('m1l5c4');
+    });
+
+    test('Espera que "vasco" retorne uma string com o mesmo numero de caracteres', () => {
+        expect(encode('vasco').length).toBe(5);
+    });
 });
 
 describe('testa a função decode', () => {
+    test('testa se decode é uma função', () => {
+        expect(typeof(decode)).toBe('function');
+    });
 
+    test('Espera que "1, 2, 3, 4, 5" retorne "a, e, i, o, u"', () => {
+        expect(decode('1, 2, 3, 4, 5')).toBe('a, e, i, o, u');
+    });
+
+    test('Espera que "1n1 m1r31" retorne "ana maria"', () => {
+        expect(decode('1n1 m1r31')).toEqual('ana maria');
+    });
+
+    test('Espera que "vasco" retorne uma string com o mesmo numero de caracteres', () => {
+        expect(decode('vasco').length).toEqual(5);
+    });
 });
