@@ -12,4 +12,12 @@ describe('a função printMessage', () => {
         expect(printMessage(info)).toMatch(/Margarida/);
         expect(printMessage(info)).toMatch(info.personagem);
     });
+
+    it('Verifica se é lançada a mensagem de erro', () => {
+        let obj = {
+            origem: 'Pato Donald',
+            nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
+          };
+        expect(() => printMessage(obj)).toThrow('objeto inválido');
+    });
 });
