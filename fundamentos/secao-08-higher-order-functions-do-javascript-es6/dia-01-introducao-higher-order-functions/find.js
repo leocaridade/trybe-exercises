@@ -18,4 +18,4 @@ const musicas = [
   ];
 // Adicione seu código aqui
 const verifyMusic = musicas.find((musica) => musica.id === '31031685');
-console.log(verifyMusic.title);
+console.log(verifyMusic);
