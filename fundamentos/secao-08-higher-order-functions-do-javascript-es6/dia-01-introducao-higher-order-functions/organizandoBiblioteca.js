@@ -93,8 +93,23 @@ const expectedResult = {
 };
 
 const getNamedBook = () => {
-  resposta = books.find((book) => book.name.length === 26);
+  return books.find((book) => book.name.length === 26);
   // resposta.sort((a, b) => a[key] > b[key] ? 1 : -1);
-  return resposta;
+  // return resposta;
 };
-console.log(getNamedBook());
+
+function everyoneWasBornOnSecXX() {
+  // escreva seu código aqui
+  return books.every((book) => book.author.birthYear > 1901 && book.author.birthYear <= 2000);
+}
+
+const someBookWasReleaseOnThe80s = () => {
+  // escreva seu código aqui
+  return books.some((book) => book.releaseYear >= 1980 && book.releaseYear <= 1989);
+}
+
+const authorUnique = () => {
+  // escreva seu código aqui
+  return books.some((book, index) => book.author.birthYear[index] === book.author.birthYear);
+}
+console.log(authorUnique());
