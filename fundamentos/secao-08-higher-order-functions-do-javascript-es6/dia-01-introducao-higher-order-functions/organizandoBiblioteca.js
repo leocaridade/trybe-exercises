@@ -93,6 +93,8 @@ const expectedResult = {
 };
 
 const getNamedBook = () => {
-  return books.find((book) => book.name.length === 26);
+  resposta = books.find((book) => book.name.length === 26);
+  // resposta.sort((a, b) => a[key] > b[key] ? 1 : -1);
+  return resposta;
 };
 console.log(getNamedBook());
