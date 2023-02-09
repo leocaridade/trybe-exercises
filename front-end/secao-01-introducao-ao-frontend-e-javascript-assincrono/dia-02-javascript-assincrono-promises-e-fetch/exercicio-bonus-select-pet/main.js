@@ -16,5 +16,12 @@ randomCatBtn.addEventListener('click', () => {
 });
 
 surpriseBtn.addEventListener('click', () => {
-  console.log('Clicou no botao surpresa');
+  Promise.any([
+    fetch('https://dog.ceo/api/breeds/image/random'),
+    fetch('https://aws.random.cat/meow'),
+  ]).then((result) => result.json())
+    .then((data) => {
+      const petURL = data.file || data.message;
+      image.src = petURL;
+    });
 });
