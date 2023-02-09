@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+}
+
+div {
+    text-align: center;
+    margin-top: 30px;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0.849);
+    color: white;
+    padding: 10px;
+    border-radius: 7px;
+    margin-left: 30px;
+    font-size: 1.2em;
+}
+
+button:hover {
+    background-color: black;
+    cursor: pointer;
+}
+
+img {
+    margin: auto;
+    padding: 15px;
+    border: solid rgba(0, 0, 0, 0.493) 1px;
+    border-radius: 5px;
+    max-height: 500px;
+}
