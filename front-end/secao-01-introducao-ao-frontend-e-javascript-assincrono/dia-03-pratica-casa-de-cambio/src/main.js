@@ -25,19 +25,21 @@ button.addEventListener('click', (moeda) => {
       icon: 'error',
       confirmButtonText: 'Ok'
     })
-  }
-
-  fetch(matchValue)
-  .then((response) => response.json())
-  .then((data) => {
-    const rates = Object.entries(data.rates);
-    rates.forEach((rate) => {
-      const newDiv = document.createElement('div');
-      newDiv.innerHTML = `${rate[0]} ${rate[1]}`
-
-      currencyCont.appendChild(newDiv);
-    });
-    paragraph.innerHTML = `Valores referentes a 1 ${moeda}`;
-  })
-  .catch((error) => console.log('Você errou'))
+  } else {
+    fetch(matchValue)
+    .then((response) => response.json())
+    .then((data) => {
+      const rates = Object.entries(data.rates);
+      rates.forEach((rate) => {
+        const newDiv = document.createElement('div');
+        newDiv.innerHTML = `${rate[0]} ${rate[1]}`
+  
+        currencyCont.appendChild(newDiv);
+      });
+      paragraph.innerHTML = `Valores referentes a 1 ${moeda}`;
+    })
+    .catch((error) => console.log('Você errou'))
+    }
   });
+
+  
