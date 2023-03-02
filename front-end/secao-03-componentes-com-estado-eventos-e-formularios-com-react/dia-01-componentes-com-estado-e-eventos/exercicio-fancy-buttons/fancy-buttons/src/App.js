@@ -1,25 +1,34 @@
-import './App.css';
+import React from 'react';
 
-const handleClick = () => {
-  console.log('Clicou');
-}
+class App extends React.Component {
+  constructor() {
+    super();
+    this.handleClick = this.handleClick.bind(this);
+    this.handleClick2 = this.handleClick2.bind(this);
+    this.handleClick3 = this.handleClick3.bind(this);
+  }
 
-const handleClick2 = () => {
-  console.log('Clicou em outro botao');
-}
+  handleClick() {
+    console.log('Clicou no botao 1: ', this);
+  }
+  
+  handleClick2() {
+    console.log('Clicou no botao 2: ', this);
+  }
+  
+  handleClick3() {
+    console.log('Clicou no botao 3: ', this);
+  }
 
-const handleClick3 = () => {
-  console.log('Clicou de novo');
-}
-
-function App() {
-  return (
-    <>
-      <button onClick={handleClick}>Botao</button>
-      <button onClick={handleClick2}>Botao</button>
-      <button onClick={handleClick3}>Botao</button>
-    </>
-  );
+  render() {
+    return (
+      <>
+        <button onClick={this.handleClick}>Botao</button>
+        <button onClick={this.handleClick2}>Botao</button>
+        <button onClick={this.handleClick3}>Botao</button>
+      </>
+    );
+  }
 }
 
 export default App;
