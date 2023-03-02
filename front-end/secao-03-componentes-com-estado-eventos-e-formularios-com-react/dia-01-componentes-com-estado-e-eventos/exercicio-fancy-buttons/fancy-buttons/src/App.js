@@ -17,27 +17,53 @@ class App extends React.Component {
   handleClick() {
     this.setState((estadoAnterior) => ({
       numeroDeCliquesPrimeiroBtn: estadoAnterior.numeroDeCliquesPrimeiroBtn + 1
-    }))
+    }), () => {
+      console.log(this.getBtnColor(this.state.numeroDeCliquesPrimeiroBtn));
+    })
   }
   
   handleClick2() {
     this.setState((estadoAnterior) => ({
       numeroDeCliquesSegundoBtn: estadoAnterior.numeroDeCliquesSegundoBtn + 1
-    }))
+    }), () => {
+      console.log(this.getBtnColor(this.state.numeroDeCliquesSegundoBtn));
+    });
   }
   
   handleClick3() {
     this.setState((estadoAnterior) => ({
       numeroDeCliquesTerceiroBtn: estadoAnterior.numeroDeCliquesTerceiroBtn + 1
-    }))
+    }), () => {
+      console.log(this.getBtnColor(this.state.numeroDeCliquesTerceiroBtn));
+    })
+  }
+
+  getBtnColor(num) {
+    return num % 2 === 0 ? 'green' : 'white';
   }
 
   render() {
+    const { numeroDeCliquesPrimeiroBtn, numeroDeCliquesSegundoBtn, numeroDeCliquesTerceiroBtn } = this.state;
     return (
       <>
-        <button onClick={this.handleClick}>{ this.state.numeroDeCliquesPrimeiroBtn }</button>
-        <button onClick={this.handleClick2}>{ this.state.numeroDeCliquesSegundoBtn }</button>
-        <button onClick={this.handleClick3}>{ this.state.numeroDeCliquesTerceiroBtn }</button>
+        <button 
+          onClick={this.handleClick}
+          style={ { backgroundColor: this.getBtnColor(numeroDeCliquesPrimeiroBtn) } }
+        >
+          { numeroDeCliquesPrimeiroBtn }
+        </button>
+        <button
+          onClick={this.handleClick2}
+          style={ { backgroundColor: this.getBtnColor(numeroDeCliquesSegundoBtn) } }  
+        >
+          { numeroDeCliquesSegundoBtn }
+        </button>
+        <button
+          onClick={this.handleClick3}
+          style={ { backgroundColor: this.getBtnColor(numeroDeCliquesTerceiroBtn) } }  
+        >
+          { numeroDeCliquesTerceiroBtn }
+        </button>
       </>
     );
   }
