@@ -6,26 +6,38 @@ class App extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleClick2 = this.handleClick2.bind(this);
     this.handleClick3 = this.handleClick3.bind(this);
+
+    this.state = {
+      numeroDeCliquesPrimeiroBtn: 0,
+      numeroDeCliquesSegundoBtn: 0,
+      numeroDeCliquesTerceiroBtn: 0,
+    }
   }
 
   handleClick() {
-    console.log('Clicou no botao 1: ', this);
+    this.setState((estadoAnterior) => ({
+      numeroDeCliquesPrimeiroBtn: estadoAnterior.numeroDeCliquesPrimeiroBtn + 1
+    }))
   }
   
   handleClick2() {
-    console.log('Clicou no botao 2: ', this);
+    this.setState((estadoAnterior) => ({
+      numeroDeCliquesSegundoBtn: estadoAnterior.numeroDeCliquesSegundoBtn + 1
+    }))
   }
   
   handleClick3() {
-    console.log('Clicou no botao 3: ', this);
+    this.setState((estadoAnterior) => ({
+      numeroDeCliquesTerceiroBtn: estadoAnterior.numeroDeCliquesTerceiroBtn + 1
+    }))
   }
 
   render() {
     return (
       <>
-        <button onClick={this.handleClick}>Botao</button>
-        <button onClick={this.handleClick2}>Botao</button>
-        <button onClick={this.handleClick3}>Botao</button>
+        <button onClick={this.handleClick}>{ this.state.numeroDeCliquesPrimeiroBtn }</button>
+        <button onClick={this.handleClick2}>{ this.state.numeroDeCliquesSegundoBtn }</button>
+        <button onClick={this.handleClick3}>{ this.state.numeroDeCliquesTerceiroBtn }</button>
       </>
     );
   }
