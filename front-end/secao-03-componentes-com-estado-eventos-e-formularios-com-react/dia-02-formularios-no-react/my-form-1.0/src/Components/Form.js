@@ -1,5 +1,7 @@
 import React from 'react';
 import SelectInput from './SelectInput';
+import NameInput from './NameInput';
+import PasswordInput from './PasswordInput';
 
 class Form extends React.Component {
   constructor() {
@@ -35,26 +37,14 @@ class Form extends React.Component {
                 favoriteColor={ favoriteColor }
                 handleChange={ this.handleChange }
               />
-              <label>
-                Digite o seu nome:
-                <input
-                  type="text" 
-                  name="name"
-                  value={name}
-                  onChange={this.handleChange}
-                >
-                </input>
-              </label>
-              <label>
-                Digite a sua senha:
-                <input 
-                  type="password"
-                  name="password"
-                  value={password}
-                  onChange={this.handleChange}
-                >
-                </input>
-              </label>
+              <NameInput
+                name={ name }
+                handleChange={ this.handleChange }
+              />
+              <PasswordInput
+                password={ password }
+                handleChange={ this.handleChange }
+              />
               <label>
                 Deseja receber promoções?
                 <input
