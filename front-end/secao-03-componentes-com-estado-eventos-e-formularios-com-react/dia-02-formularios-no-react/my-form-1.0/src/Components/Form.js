@@ -1,46 +1,81 @@
 import React from 'react';
+import SelectInput from './SelectInput';
 
 class Form extends React.Component {
   constructor() {
     super();
     this.state = {
-      value: '',
+      favoriteColor: 'Amarelo',
+      name: '',
+      password: '',
+      offers: false,
+      about: '',
     };
 
-    this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleTextChange(event) {
+  handleChange({target}) {
+    const {name} = target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
     this.setState({
-      value: event.target.value,
+      [name]: value,
     });
   }
 
   render() {
+    const { favoriteColor, name, password, offers, about } = this.state;
+
     return (
       <>
         <form>
-          <label>
-            Escolha sua cor favorita:
-            <select>
-              <option>Amarelo</option>
-              <option>Azul</option>
-              <option>Verde</option>
-              <option>Vermelho</option>
-            </select>
-          </label>
-          <label>
-            Digite o seu nome:
-            <input type="text" onChange={this.handleTextChange}></input>
-          </label>
-          <label>
-            Digite a sua senha:
-            <input type="password"></input>
-          </label>
+          <fieldset>
+            <legend>Informações</legend>
+              <SelectInput
+                favoriteColor={ favoriteColor }
+                handleChange={ this.handleChange }
+              />
+              <label>
+                Digite o seu nome:
+                <input
+                  type="text" 
+                  name="name"
+                  value={name}
+                  onChange={this.handleChange}
+                >
+                </input>
+              </label>
+              <label>
+                Digite a sua senha:
+                <input 
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={this.handleChange}
+                >
+                </input>
+              </label>
+              <label>
+                Deseja receber promoções?
+                <input
+                  type="checkbox"
+                  name="offers"
+                  value={offers}
+                  onChange={this.handleChange}
+                >
+                </input>
+              </label>
+          </fieldset>
           <label>
             Escreva um pouco sobre você:
-            <textarea></textarea>
+            <textarea
+              name="about"
+              value={about}
+              onChange={this.handleChange}
+            >
+            </textarea>
           </label>
+          <input type="file" />
         </form>
       </>
     )
