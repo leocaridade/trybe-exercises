@@ -1,0 +1,20 @@
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  gap: 8px;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
