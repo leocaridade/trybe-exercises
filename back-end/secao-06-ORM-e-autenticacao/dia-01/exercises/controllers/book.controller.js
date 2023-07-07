@@ -1,4 +1,4 @@
-const { BookService } = require('../services/book.service');
+const BookService = require('../services/book.service');
 
 const getAll = async (_req, res) => {
   try {
@@ -22,7 +22,19 @@ const getById = async (req, res) => {
   }
 }
 
+const create = async (req, res) => {
+  try {
+    const { title, author, pageQuantity } = req.body;
+    const book = await BookService.create(title, author, pageQuantity);
+    return res.status(201).json(book);
+  } catch (e) {
+    console.log(e.message);
+    res.status(500).json({ message: 'Ocorreu um erro' });
+  }
+}
+
 module.exports = {
   getAll,
   getById,
+  create,
 };
