@@ -46,9 +46,22 @@ const update = async (req, res) => {
   }
 }
 
+const remove = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const removed = await BookService.remove(id);
+    if (!removed) return res.status(404).json({ message: 'Book not found' });
+    return res.status(200).json({ message: 'Book deleted' });
+  } catch (e) {
+    console.log(e.message);
+    res.status(500).json({ message: 'Ocorreu um erro' });
+  }
+}
+
 module.exports = {
   getAll,
   getById,
   create,
   update,
+  remove,
 };

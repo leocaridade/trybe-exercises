@@ -9,5 +9,6 @@ app.get('/books', Book.getAll);
 app.get('/books/:id', Book.getById);
 app.post('/books', Book.create);
 app.put('/books/:id', Book.update);
+app.delete('/books/:id', Book.remove);
 
 app.listen(PORT, () => console.log(`Ouvindo na porta ${PORT}!`));
