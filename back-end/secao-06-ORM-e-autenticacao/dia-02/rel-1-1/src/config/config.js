@@ -1,8 +1,13 @@
-const path = require('path');
+const config = {
+  username: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
+  host: process.env.MYSQL_HOST,
+  dialect: 'mysql',
+};
 
 module.exports = {
-  'config': path.resolve('src', 'config', 'config.js'),
-  'models-path': path.resolve('src', 'models'),
-  'seeders-path': path.resolve('src', 'seeders'),
-  'migrations-path': path.resolve('src', 'migrations'),
+  development: config,
+  test: config,
+  production: config,
 };
