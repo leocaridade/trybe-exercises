@@ -2,7 +2,15 @@ const BookService = require('../services/book.service');
 
 const getAll = async (_req, res) => {
   try {
-    const books = await BookService.getAll();
+    const { author } = req.query;
+
+    let books;
+
+    if (author) {
+      books = await BookService.getByAuthor(author);
+    } else {
+      books = await BookService.getAll();
+    }
     return res.status(200).json(books);
   } catch (e) {
     console.log(e.message);
@@ -24,8 +32,8 @@ const getById = async (req, res) => {
 
 const create = async (req, res) => {
   try {
-    const { title, author, pageQuantity } = req.body;
-    const book = await BookService.create(title, author, pageQuantity);
+    const { title, author, pageQuantity, publisher } = req.body;
+    const book = await BookService.create(title, author, pageQuantity, publisher);
     return res.status(201).json(book);
   } catch (e) {
     console.log(e.message);
@@ -36,8 +44,8 @@ const create = async (req, res) => {
 const update = async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, author, pageQuantity } = req.body;
-    const updateBook = await BookService.update(id, { title, author, pageQuantity });
+    const { title, author, pageQuantity, publisher } = req.body;
+    const updateBook = await BookService.update(id, { title, author, pageQuantity, publisher });
     if (!updateBook) return res.status(404).json({ message: 'Book not found' });
     return res.status(200).json({ message: 'Book updated' });
   } catch (e) {
